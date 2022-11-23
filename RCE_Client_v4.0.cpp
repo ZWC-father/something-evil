@@ -1,4 +1,4 @@
-﻿#include "hv/TcpClient.h"
+#include "hv/TcpClient.h"
 #include <stdio.h>
 #include <string.h>
 #include <windows.h>
@@ -16,7 +16,7 @@
 #define SEND_SIZE 64//tcp发送缓冲区
 #define RECV_SIZE 256//tcp接收缓冲区==父进程输出缓冲区
 #define PORT 23769
-#define SERVER_IP "10.5.11.179"
+#define SERVER_IP "127.0.0.1"
 #define sleep(x) this_thread::sleep_for(chrono::milliseconds(x))
 //WRITE_SIZE==RECV_SIZE，SEND_SIZE>READ_SIZE
 
@@ -377,7 +377,3 @@ int main() {
 
 	return 0;
 }
-/*
-TODO 1:修改管理帧
-bug 1:网络库崩溃
-*/
