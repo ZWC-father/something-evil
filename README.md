@@ -29,3 +29,5 @@
 + 使用system()执行命令，并传回进程返回值（不能进行命令交互）
 
 #### RCE_Client_v2.0.cpp/RCE_Server_v2.0.cpp
++ 优化tcp传输
++ 使用popen()执行命令，支持回显（只能得到进程的stdout，得不到stderr）
