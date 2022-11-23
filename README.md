@@ -9,7 +9,7 @@
 
 #### KeyLogger_Client_v2.0.cpp
 + tcp实时发送键盘记录（只能在低延迟低丢包网络环境下使用，没有做任何粘包拆包的处理）
-+ tcp可自动重连
++ tcp支持心跳包，可自动重连
 + 使用低级键盘钩子和消息循环，记录准确
 + 增加实时状态输出，便于调试
 
@@ -26,8 +26,22 @@
 ## 远程命令执行
 #### RCE_Client_v1.0.cpp/RCE_Server_v1.0.cpp
 + 客户端为被控端，可一定程度上避免被防火墙拦截（首次运行不会有Windows防火墙的提示）
++ 支持心跳包
 + 使用system()执行命令，并传回进程返回值（不能进行命令交互）
 
 #### RCE_Client_v2.0.cpp/RCE_Server_v2.0.cpp
 + 优化tcp传输
 + 使用popen()执行命令，支持回显（只能得到进程的stdout，得不到stderr）
+
+#### RCE_Client_v2.1.cpp/RCE_Server_v2.1.cpp
++ 在2.0基础上少量优化
+
+#### RCE_Client_v3.0.cpp/RCE_Server_v3.0.cpp
++ 一个失败的版本
+
+#### RCE_Client_v4.0.cpp/RCE_Server_v4.0.cpp
++ 全新的命令执行方式:CreateProcess()创建cmd/powershell子进程，直接通过管道与终端交互
++ 自动管理cmd进程，cmd被taskkill后可自动恢复
++ 使用```libhv```网络库，保证传输稳定，有粘包拆包策略，可自动重连
++ Server可捕获Ctrl+C并发给Client，Client发送SIGINT给子进程以模拟正常的进程终止
++ 使用VS2022构建，支持Win11
