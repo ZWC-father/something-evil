@@ -4,7 +4,7 @@
 #include <thread>
 #define SEND_SIZE 6//禁止修改
 #define RECV_SIZE 32//与服务端适配
-#define PORT 33561//与服务端适配
+#define PORT 35924//与服务端适配
 #define SERVER_IP "10.5.11.179"//与服务端适配
 #define sleep(x) this_thread::sleep_for(chrono::milliseconds(x))
 
