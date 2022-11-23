@@ -25,7 +25,7 @@
 
 ## 远程命令执行
 #### RCE_Client_v1.0.cpp/RCE_Server_v1.0.cpp
-+ 客户端为被控端，可一定程度上避免被防火墙拦截（首次运行不会有Windows Defender的提示）
++ 客户端为被控端，可一定程度上避免被防火墙拦截（首次运行不会有Windows防火墙的提示）
 + 使用system()执行命令，并传回进程返回值（不能进行命令交互）
 
 #### RCE_Client_v2.0.cpp/RCE_Server_v2.0.cpp
