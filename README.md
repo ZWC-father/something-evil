@@ -42,6 +42,6 @@
 #### RCE_Client_v4.0.cpp/RCE_Server_v4.0.cpp
 + 全新的命令执行方式:CreateProcess()创建cmd/powershell子进程，直接通过管道与终端交互
 + 自动管理cmd进程，cmd被taskkill后可自动恢复
-+ 使用```libhv```网络库，保证传输稳定，有粘包拆包策略，可自动重连
++ 使用[libhv](https://github.com/ithewei/libhv)网络库，保证传输稳定，有粘包拆包策略，可自动重连
 + Server可捕获Ctrl+C并发给Client，Client发送SIGINT给子进程以模拟正常的进程终止
 + 使用VS2022构建，支持Win11
