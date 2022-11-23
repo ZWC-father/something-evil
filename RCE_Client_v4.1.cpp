@@ -27,7 +27,7 @@
 #define SEND_SIZE 256//tcp发送缓冲区
 #define RECV_SIZE 256//tcp接收缓冲区==父进程输出缓冲区
 #define PORT 48706
-#define SERVER_IP "192.168.1.3"
+#define SERVER_IP "127.0.0.1"
 #define sleep(x) this_thread::sleep_for(chrono::milliseconds(x))
 //WRITE_SIZE==RECV_SIZE，SEND_SIZE>READ_SIZE
 
@@ -417,6 +417,3 @@ int main() {
 
 	return 0;
 }
-/*
-bug 1:网络库崩溃
-*/
